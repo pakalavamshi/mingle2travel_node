@@ -7,14 +7,14 @@ var app = express()
 var router = require('./router/index')
 app.use(bodyParser.json({ limit: '10000mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10000mb' }));
-mongoose.connect(db.dburl, (err, response) => {
-   if (err) {
-      console.log("mongodb connection err")
-   } else {
-      console.log("mongodb connection sucessfully")
-   }
+// mongoose.connect(db.dburl, (err, response) => {
+//    if (err) {
+//       console.log("mongodb connection err")
+//    } else {
+//       console.log("mongodb connection sucessfully")
+//    }
 
-})
+// })
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 io.on('connection', function (socket) {
